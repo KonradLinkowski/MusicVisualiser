@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      display: flex;
+      background: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      height: 100vh;
+      flex-wrap: wrap;
+    }
+    canvas {
+      display: block;
+    }
+    @media (max-width: 800px) {
+      * {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canv3"></canvas>
+  <div>
+    <canvas id="canv1"></canvas>
+    <canvas id="canv2"></canvas>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
