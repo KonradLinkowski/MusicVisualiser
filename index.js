@@ -33,7 +33,7 @@ async function fun() {
     contexts[2].canvas.width = 800;
     contexts[2].canvas.height = 800;
 
-    const bar = createAnalyser(256);
+    const bar = createAnalyser(128);
     const osci = createAnalyser(2048);
     const circle = createAnalyser(256);
 
@@ -79,7 +79,7 @@ async function fun() {
 
       context.fillStyle = 'rgb(0, 0, 0)';
       context.fillRect(0, 0, context.canvas.width, context.canvas.height);
-      const barWidth = (context.canvas.width / length) * 2.5;
+      const barWidth = (context.canvas.width / length);
       let x = 0;
       for (let i = 0; i < length; i++) {
         const barHeight = data[i] / 2;
@@ -87,9 +87,9 @@ async function fun() {
         const color = inter(barHeight / 200, [200, 50, 100], [10, 10, 250]);
 
         context.fillStyle = `rgb(${color.join()})`;
-        context.fillRect(x, context.canvas.height - barHeight, barWidth, barHeight);
+        context.fillRect(x, context.canvas.height - barHeight, barWidth - 1, barHeight);
 
-        x += barWidth + 1;
+        x += barWidth;
       }
     }
 
